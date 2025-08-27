@@ -20,8 +20,8 @@ description = "Convert any callable into a function."
 keywords = []
 name = "tofunc"
 readme = "README.rst"
-requires-python = ">=3.8"
-version = "1.0.0"
+requires-python = ">=3.11"
+version = "0.0.0.dev0"
 
 [project.license]
 file = "LICENSE.txt"
