@@ -9,7 +9,7 @@ authors = [
     { email = "johannes.programming@gmail.com", name = "Johannes" },
 ]
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Natural Language :: English",
@@ -25,7 +25,7 @@ keywords = []
 name = "tofunc"
 readme = "README.rst"
 requires-python = ">=3.11"
-version = "1.0.1.dev0"
+version = "1.0.1"
 
 [project.license]
 file = "LICENSE.txt"
