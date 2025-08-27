@@ -11,9 +11,12 @@ authors = [
 classifiers = [
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3 :: Only",
+    "Typing :: Typed",
 ]
 dependencies = []
 description = "Convert any callable into a function."
