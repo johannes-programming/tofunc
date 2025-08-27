@@ -19,7 +19,7 @@ classifiers = [
     "Typing :: Typed",
 ]
 dependencies = []
-description = "Convert any callable into a function."
+description = "This project allows converting any callable into a function."
 keywords = []
 name = "tofunc"
 readme = "README.rst"
