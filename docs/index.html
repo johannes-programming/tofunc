@@ -44,13 +44,20 @@
             </dd>
         </dl>
     </body>
-    <script src="https://www.johannes-programming.online/script.js"></script>
-    <script>
+    <script type="module">
+        import {
+            setupImpressumCorpus,
+            setupInstallCorpus,
+            setupLicenseCorpus,
+            setupLinksCorpus,
+            setupTestingCorpus,
+            addMetaAndLinkTags,
+        } from "https://www.johannes-programming.online/main.js";
+        setupImpressumCorpus("tofunc");
         setupInstallCorpus("tofunc");
-        setupTestingCorpus("tofunc");
         setupLicenseCorpus("tofunc");
         setupLinksCorpus("tofunc");
-        setupImpressumCorpus("tofunc");
+        setupTestingCorpus("tofunc");
         addMetaAndLinkTags();
     </script>
 </html>
