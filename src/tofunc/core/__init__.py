@@ -9,9 +9,9 @@ def tofunc(old: Callable, /) -> types.FunctionType:
     def new(*args: Any, **kwargs: Any) -> Any:
         return old(*args, **kwargs)
 
-    ans: types.FunctionType
+    ans: Any
     try:
         ans = functools.wraps(old)(new)
-    except:
+    except BaseException:
         ans = new
     return ans

@@ -1,2 +1,1 @@
-from tofunc.core import *
-from tofunc.tests import *
+from tofunc.core import tofunc

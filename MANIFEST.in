@@ -1,1 +1,2 @@
-include src/tofunc/tests/*.toml
+recursive-include docs *.rst
+recursive-include src/tofunc *.toml
