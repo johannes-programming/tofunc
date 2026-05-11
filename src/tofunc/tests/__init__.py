@@ -3,10 +3,10 @@ import unittest
 __all__ = ["test"]
 
 
-def test() -> unittest.TextTestRunner:
+def test() -> unittest.TextTestResult:
     "This function runs all the tests."
-    loader: unittest.TestLoader = unittest.TestLoader()
-    tests: unittest.TestSuite = loader.discover(start_dir="tofunc.tests")
-    runner: unittest.TextTestRunner = unittest.TextTestRunner()
-    result: unittest.TextTestResult = runner.run(tests)
-    return result
+    loader: unittest.TestLoader
+    suite: unittest.TestSuite
+    loader = unittest.TestLoader()
+    suite = loader.discover(start_dir="tofunc.tests")
+    return unittest.TextTestRunner().run(suite)

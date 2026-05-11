@@ -1,26 +1,31 @@
 import functools
-import types
 import unittest
-from typing import *
+from typing import Any, Self
 
 from tofunc import tofunc
+
+__all__ = ["TestHello"]
+
+
+class Bar:
+    def join(self: Self, b: Any = "beta", c: Any = "gamma") -> str:
+        return "%s %s %s" % (self, b, c)
 
 
 class TestHello(unittest.TestCase):
     def test_hello(self: Self) -> None:
-        def join(self: Self, b: Any = "beta", c: Any = "gamma") -> str:
-            return "%s %s %s" % (self, b, c)
 
-        class Foo: ...
+        class Foo:
+            greet: Any
 
-        hello: functools.partial = functools.partial(join, c="hello")
-        Foo.greet = hello
+            def __str__(self: Self) -> str:
+                return "Foo"
+
+        text: str
+        Foo.greet = functools.partial(Bar.join, c="hello")
         self.assertEqual(Foo().greet("Alice"), "Alice beta hello")
-        hello: types.FunctionType = tofunc(hello)
-        Foo.greet = hello
-        text: str = Foo().greet("Bob")
-        self.assertTrue(text.endswith("Bob hello"))
-        self.assertTrue("Foo" in text)
+        Foo.greet = tofunc(Foo.greet)
+        self.assertEqual(Foo().greet("Bob"), "Foo Bob hello")
 
 
 if __name__ == "__main__":

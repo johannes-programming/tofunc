@@ -1,17 +1,18 @@
 import functools
-import types
-from typing import *
+from collections.abc import Callable
+from typing import ParamSpec, TypeVar
 
 __all__ = ["tofunc"]
 
+Params = ParamSpec("Params")
+Return = TypeVar("Return")
 
-def tofunc(old: Callable, /) -> types.FunctionType:
-    def new(*args: Any, **kwargs: Any) -> Any:
+
+def tofunc(old: Callable[Params, Return], /) -> Callable[Params, Return]:
+    def new(*args: Params.args, **kwargs: Params.kwargs) -> Return:
         return old(*args, **kwargs)
 
-    ans: types.FunctionType
     try:
-        ans = functools.wraps(old)(new)
-    except:
-        ans = new
-    return ans
+        return functools.wraps(old)(new)
+    except Exception:
+        return new
