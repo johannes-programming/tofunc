@@ -1,7 +1,7 @@
 [build-system]
 build-backend = "setuptools.build_meta"
 requires = [
-    "setuptools>=61.0",
+    "setuptools>=77.0",
 ]
 
 [project]
@@ -11,7 +11,6 @@ authors = [
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
     "Natural Language :: English",
     "Operating System :: OS Independent",
     "Programming Language :: Python",
@@ -22,16 +21,24 @@ classifiers = [
 dependencies = []
 description = "This project allows converting any callable into a function."
 keywords = []
+license = "MIT"
+license-files = [
+    "LICENSE.txt",
+]
 name = "tofunc"
 readme = "README.rst"
 requires-python = ">=3.11"
-version = "1.0.1"
-
-[project.license]
-file = "LICENSE.txt"
+version = "1.1.2"
 
 [project.urls]
 Download = "https://pypi.org/project/tofunc/#files"
 Index = "https://pypi.org/project/tofunc/"
 Source = "https://github.com/johannes-programming/tofunc/"
 Website = "https://tofunc.johannes-programming.online/"
+
+[tool.mypy]
+files = [
+    ".",
+]
+python_version = "3.11"
+strict = true
