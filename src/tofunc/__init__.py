@@ -1,3 +1,5 @@
-from tofunc.core import tofunc
+"""Provide the public tofunc interface."""
 
-__all__ = ["tofunc"]
+__all__: list[str] = ["tofunc"]
+
+from tofunc.core import tofunc
